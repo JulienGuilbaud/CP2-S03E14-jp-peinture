@@ -1,0 +1,22 @@
+@use 'var';
+
+@mixin medium {
+  @media screen and (min-width: var.$breakpoint-medium) {
+    @content;
+  }
+}
+
+@mixin big {
+  @media screen and (min-width: var.$breakpoint-big) {
+    @content;
+  }
+}
+
+@mixin rollover {
+  border-bottom: 3px solid transparent;
+  padding-bottom: 0.4em;
+
+  &:hover {
+      border-bottom: 3px solid; // en l'absence de couleur une bordure prendra la couleur du texte
+  }
+}

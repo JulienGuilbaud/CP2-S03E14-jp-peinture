@@ -1,0 +1,96 @@
+@use 'mixin';
+@use 'var';
+
+body {
+    background-color: var.$color-white;
+    font-family: var.$main-font;
+    line-height: 1.4;
+}
+
+h1 {
+    color: darken(var.$color-blue, 40%);
+    font-size: 1.7rem;
+}
+
+h2 {
+    color: darken(var.$color-blue, 40%);
+    font-size: 1.6rem;
+    border-bottom: var.$color-blue solid 2px;
+    margin-bottom: var.$gutter;
+    text-align: center;
+
+    @include mixin.medium {
+        text-align: left;
+    }
+}
+
+img {
+    max-width: 100%;
+}
+
+main {
+    margin: auto;
+    margin-top: var.$header-height-small;
+    width: 90%;
+    min-height: var.$main-min-height;
+    padding-top: var.$gutter-double;
+    
+    @include mixin.medium {
+        width: var.$container-width-medium;
+    }
+    
+    @include mixin.big {
+        width: var.$container-width-big;
+    }
+
+    section {
+        margin-bottom: var.$gutter;
+    }
+}
+
+#intro {
+    min-height: 25vh;
+    position: relative;
+    background-image: url("../images/jean-pierre.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    // plutôt que de faire 2 selecteur, on peut cumuler 2 selecteur (ou plus) en les séparant par des virgules
+    h2, p {
+        width: 50%;
+
+        @include mixin.big {
+            width: 80%;
+        }
+    }
+}
+
+#last-jobs {
+
+    .job-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .card {
+            width: 100%;
+
+            @include mixin.medium {
+                width: calc(50% - var.$gutter);
+            }
+
+            @include mixin.big {
+                // ainsi on aura un peu plus que 1rem entre chaque item
+                width: calc(25% - var.$gutter);
+                // ainsi on aura pile poile 1rem entre chaque item
+                width: calc((100% - 3rem) / 4);
+            }
+        }
+    }
+
+    .see-all {
+        padding-bottom: var.$gutter;
+        display: flex;
+        justify-content: center;
+    }
+}

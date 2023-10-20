@@ -1,0 +1,91 @@
+@use '../mixin';
+@use '../var';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var.$main-background-color;
+    z-index: 10;
+    height: var.$header-height-small;
+    min-height: 4rem;
+
+    @include mixin.medium {
+        height: var.$header-height;
+    }
+
+    .logo {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+        height: 50%;
+
+        img {
+            height: 80%;
+            margin-right: var.$gutter;
+            transform: rotateY(180deg);
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            color: var.$color-blue;
+
+            @include mixin.medium {
+                font-size: 1.4rem;
+            }
+        }
+    }
+
+    .main-menu {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+
+        ul {
+            margin: auto;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+
+            @include mixin.medium {
+                width: var.$container-width-medium;
+            }
+
+            @include mixin.big {
+                width: var.$container-width-big;
+            }
+
+            li {
+                text-align: center;
+                width:20%;
+
+                a {
+                    display: block;
+                    color: darken(var.$color-blue, 30%);
+                    font-weight: bold;
+                    text-decoration: none;
+                    &:hover {
+                        color: var.$color-blue;
+                        border-bottom: 2px var.$color-blue solid;
+                    }
+                }
+
+                &.active {
+                    a {
+                        color: var.$color-blue;
+                    }
+
+                    border-bottom: 2px var.$color-blue solid;
+                }
+            }
+        }
+    }
+}

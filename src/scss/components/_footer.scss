@@ -1,0 +1,38 @@
+@use '../var';
+@use '../mixin';
+
+.footer {
+    background-color: var.$color-blue;
+    color: var.$color-white;
+    padding: var.$gutter;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    ul.links {
+        line-height: 2;
+        margin-bottom: var.$gutter;
+        width: 50%;
+
+        @include mixin.medium {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        li {
+            text-align: center;
+
+            a {
+                color: var.$color-yellow;
+                text-decoration: none;
+                @include mixin.rollover;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        width: 100%;
+    }
+}

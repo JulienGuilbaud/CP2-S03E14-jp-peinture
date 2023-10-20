@@ -1,0 +1,29 @@
+$color-blue: #4e9bd4;
+$color-pink: #f05f88;
+$color-yellow:#fbd20a;
+$color-orange:#f16723;
+$color-green: #7fc344;
+$color-white: white;
+$color-dark: #232323;
+
+$main-background-color: lighten($color-blue, 30%);
+
+$main-font: "Open Sans", sans-serif;
+
+$gutter: 1rem;
+$gutter-half: calc($gutter / 2);
+$gutter-double: calc($gutter * 2);
+
+$border-radius-small: $gutter-half;
+
+$breakpoint-medium: 50rem;
+$breakpoint-big: 90rem;
+
+$header-height: 15vh;
+$header-height-small: $header-height * 1.5;
+$footer-height: 20vh;
+$main-min-height: calc(100vh - $header-height);
+
+$container-width-small: 90%;
+$container-width-medium: 40rem;
+$container-width-big: 80rem;

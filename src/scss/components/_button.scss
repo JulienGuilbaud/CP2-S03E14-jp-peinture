@@ -1,0 +1,18 @@
+@use '../var';
+
+.button {
+    background-color: var.$color-blue;
+    border-radius: var.$border-radius-small;
+    padding: var.$gutter;
+    color: var.$color-white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.2s all;
+
+    &:hover {
+        color: var.$color-blue;
+        background-color: var.$color-white;
+        text-decoration: underline;
+        text-underline-offset: 0.4em;
+    }
+}
